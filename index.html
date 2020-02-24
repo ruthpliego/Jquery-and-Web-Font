@@ -20,9 +20,39 @@ body {
   } );
 	</script>
 	
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+    .toggler { width: 500px; height: 200px; position: relative; }
+    #button { padding: .5em 1em; text-decoration: none; }
+    #effect { width: 240px; height: 170px; padding: 0.4em; position: relative; background: #fff; }
+    #effect h3 { margin: 0; padding: 0.4em; text-align: center; }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    var state = true;
+    $( "#button" ).on( "click", function() {
+      if ( state ) {
+        $( "#effect" ).animate({
+          backgroundColor: "#ffb399",
+          color: "#fff",
+          width: 500
+        }, 1000 );
+      } else {
+        $( "#effect" ).animate({
+          backgroundColor: "#fff",
+          color: "#000",
+          width: 240
+        }, 1000 );
+      }
+      state = !state;
+    });
+  } );
+  </script>
 </head>
-    
-    
+
 <body>
     <header><h1>BEES</h1></header>
     
@@ -40,6 +70,24 @@ body {
 		</article>
 		</section>
     </div>
+    <br>
+    <br>
+   <div class="secMid">
+       <div class="toggler"><aside>
+  <div id="effect" class="ui-widget-content ui-corner-all">
+    <h3 class="ui-widget-header ui-corner-all"><b>Why BEES?</b></h3>
+    <p>
+     <small>Bees are beautiful and over 1/3 of the food we eat is possible thanks to them.</small>
+    </p>
+  </div>
+ </aside>
+    </div>
+    </div>
+    
+
+    
+<button id="button" class="ui-state-default ui-corner-all">what's this?</button>
+
     
     <footer><small>buzz buzz buzz buzz buzz buzz &#169;</small></footer>
     </body>
